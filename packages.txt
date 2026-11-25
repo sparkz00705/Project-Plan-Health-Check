@@ -1,3 +1,2 @@
-# Streamlit Community Cloud currently documents a Debian 11 base image.
-openjdk-11-jre-headless
+default-jre-headless
 fonts-dejavu-core
