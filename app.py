@@ -90,7 +90,7 @@ uploaded = st.file_uploader(
     type=["mpp", "xlsx"],
     help="Supported inputs: native Microsoft Project .mpp and Excel .xlsx. Maximum file size: 50 MB.",
 )
-
+current_signature = None
 if uploaded is not None:
     upload_bytes = uploaded.getvalue()
     suffix = Path(uploaded.name).suffix.lower()
