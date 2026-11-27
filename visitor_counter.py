@@ -459,5 +459,4 @@ def render_footer(st: Any) -> None:
     else:
         st.caption(f"👁️ Visits: {visit_count:,}")
 
-    st.caption(
-         )
+  
