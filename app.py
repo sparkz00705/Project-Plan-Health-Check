@@ -13,6 +13,7 @@ from excel_reader import list_schedule_sheets, read_excel
 from health_engine import assess_schedule
 from mpp_reader import read_mpp
 from pdf_report import build_pdf
+from visitor_counter import render_footer
 
 MAX_FILE_BYTES = 50 * 1024 * 1024
 RESULT_KEY = "mvp2_result"
@@ -85,12 +86,14 @@ with st.expander("What this tool checks", expanded=False):
         "or keep project history in a database. Missing source data is shown as a limitation rather than assumed to be a defect."
     )
 
+current_signature = None
+
 uploaded = st.file_uploader(
     "Choose a project plan",
     type=["mpp", "xlsx"],
     help="Supported inputs: native Microsoft Project .mpp and Excel .xlsx. Maximum file size: 50 MB.",
 )
-current_signature = None
+
 if uploaded is not None:
     upload_bytes = uploaded.getvalue()
     suffix = Path(uploaded.name).suffix.lower()
@@ -214,3 +217,5 @@ if st.button("Clear current assessment"):
 
 st.divider()
 st.caption("Session-only processing | No project history database | No changes are made to the uploaded schedule")
+
+render_footer(st)
