@@ -460,8 +460,4 @@ def render_footer(st: Any) -> None:
         st.caption(f"👁️ Visits: {visit_count:,}")
 
     st.caption(
-        "Regional analytics use an approximate country/region lookup. "
-        "The connection IP is sent securely to FreeIPAPI for the lookup; "
-        "this app stores aggregate country/region counts, not the IP address. "
-        "[Opt out of analytics](?analytics=off)."
-    )
+         )
